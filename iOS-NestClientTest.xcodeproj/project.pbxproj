@@ -1,0 +1,503 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		473CE17E1FB88DF60095CAC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 473CE17D1FB88DF60095CAC1 /* AppDelegate.m */; };
+		473CE1841FB88DF60095CAC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 473CE1821FB88DF60095CAC1 /* Main.storyboard */; };
+		473CE1861FB88DF60095CAC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 473CE1851FB88DF60095CAC1 /* Assets.xcassets */; };
+		473CE1891FB88DF60095CAC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 473CE1871FB88DF60095CAC1 /* LaunchScreen.storyboard */; };
+		473CE18C1FB88DF60095CAC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 473CE18B1FB88DF60095CAC1 /* main.m */; };
+		47BD14B81FB892B500734331 /* VJWebAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD14B71FB892B500734331 /* VJWebAuthViewController.m */; };
+		47BD14BB1FB892C100734331 /* VJLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD14BA1FB892C100734331 /* VJLandingViewController.m */; };
+		47BD14BF1FB896B700734331 /* VJAuthManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD14BE1FB896B700734331 /* VJAuthManager.m */; };
+		47BD14C21FB8BD4D00734331 /* VJAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD14C11FB8BD4D00734331 /* VJAPIManager.m */; };
+		47BD14D81FB8BDDE00734331 /* VJNestThermostatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD14D71FB8BDDE00734331 /* VJNestThermostatModel.m */; };
+		47BD14DB1FB8BDEC00734331 /* VJNestStructureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD14DA1FB8BDEC00734331 /* VJNestStructureModel.m */; };
+		47BD14E01FB9A67400734331 /* VJNestCameraModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD14DF1FB9A67400734331 /* VJNestCameraModel.m */; };
+		47BD14E51FB9ABE900734331 /* VJAuthToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD14E41FB9ABE900734331 /* VJAuthToken.m */; };
+		47BD14E81FB9BC2E00734331 /* VJAPIManager+Auth.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD14E71FB9BC2E00734331 /* VJAPIManager+Auth.m */; };
+		4DADF345955A3E60A06ADAA0 /* Pods_iOS_NestClientTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602C769907C98F760B1C8398 /* Pods_iOS_NestClientTest.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		473CE1791FB88DF60095CAC1 /* iOS-NestClientTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-NestClientTest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		473CE17C1FB88DF60095CAC1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		473CE17D1FB88DF60095CAC1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		473CE1831FB88DF60095CAC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		473CE1851FB88DF60095CAC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		473CE1881FB88DF60095CAC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		473CE18A1FB88DF60095CAC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		473CE18B1FB88DF60095CAC1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		473CE1971FB88F9B0095CAC1 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		47BD14B61FB892B500734331 /* VJWebAuthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJWebAuthViewController.h; sourceTree = "<group>"; };
+		47BD14B71FB892B500734331 /* VJWebAuthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VJWebAuthViewController.m; sourceTree = "<group>"; };
+		47BD14B91FB892C100734331 /* VJLandingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJLandingViewController.h; sourceTree = "<group>"; };
+		47BD14BA1FB892C100734331 /* VJLandingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VJLandingViewController.m; sourceTree = "<group>"; };
+		47BD14BD1FB896B700734331 /* VJAuthManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJAuthManager.h; sourceTree = "<group>"; };
+		47BD14BE1FB896B700734331 /* VJAuthManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VJAuthManager.m; sourceTree = "<group>"; };
+		47BD14C01FB8BD4D00734331 /* VJAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJAPIManager.h; sourceTree = "<group>"; };
+		47BD14C11FB8BD4D00734331 /* VJAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VJAPIManager.m; sourceTree = "<group>"; };
+		47BD14D61FB8BDDE00734331 /* VJNestThermostatModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJNestThermostatModel.h; sourceTree = "<group>"; };
+		47BD14D71FB8BDDE00734331 /* VJNestThermostatModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VJNestThermostatModel.m; sourceTree = "<group>"; };
+		47BD14D91FB8BDEC00734331 /* VJNestStructureModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJNestStructureModel.h; sourceTree = "<group>"; };
+		47BD14DA1FB8BDEC00734331 /* VJNestStructureModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VJNestStructureModel.m; sourceTree = "<group>"; };
+		47BD14DC1FB9A57300734331 /* VJGenericBlockTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VJGenericBlockTypes.h; sourceTree = "<group>"; };
+		47BD14DD1FB9A65200734331 /* Models.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
+		47BD14DE1FB9A67400734331 /* VJNestCameraModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJNestCameraModel.h; sourceTree = "<group>"; };
+		47BD14DF1FB9A67400734331 /* VJNestCameraModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VJNestCameraModel.m; sourceTree = "<group>"; };
+		47BD14E21FB9A77700734331 /* VJModelObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJModelObject.h; sourceTree = "<group>"; };
+		47BD14E31FB9ABE900734331 /* VJAuthToken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJAuthToken.h; sourceTree = "<group>"; };
+		47BD14E41FB9ABE900734331 /* VJAuthToken.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VJAuthToken.m; sourceTree = "<group>"; };
+		47BD14E61FB9BC2E00734331 /* VJAPIManager+Auth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VJAPIManager+Auth.h"; sourceTree = "<group>"; };
+		47BD14E71FB9BC2E00734331 /* VJAPIManager+Auth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "VJAPIManager+Auth.m"; sourceTree = "<group>"; };
+		47BD14E91FB9BCA000734331 /* VJApiManager_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJApiManager_Private.h; sourceTree = "<group>"; };
+		602C769907C98F760B1C8398 /* Pods_iOS_NestClientTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_NestClientTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3E45F68BAA7238737D08259 /* Pods-iOS-NestClientTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-NestClientTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-NestClientTest/Pods-iOS-NestClientTest.release.xcconfig"; sourceTree = "<group>"; };
+		CFFBD8F86009F8679D9F0888 /* Pods-iOS-NestClientTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-NestClientTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-NestClientTest/Pods-iOS-NestClientTest.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		473CE1761FB88DF60095CAC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DADF345955A3E60A06ADAA0 /* Pods_iOS_NestClientTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		473CE1701FB88DF60095CAC1 = {
+			isa = PBXGroup;
+			children = (
+				473CE17B1FB88DF60095CAC1 /* iOS-NestClientTest */,
+				473CE17A1FB88DF60095CAC1 /* Products */,
+				D5B9743584B02D9B07D983DA /* Pods */,
+				8A410233B6A76C84F5E47800 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		473CE17A1FB88DF60095CAC1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				473CE1791FB88DF60095CAC1 /* iOS-NestClientTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		473CE17B1FB88DF60095CAC1 /* iOS-NestClientTest */ = {
+			isa = PBXGroup;
+			children = (
+				47BD14C31FB8BD5D00734331 /* Models */,
+				47BD14BC1FB8968000734331 /* Managers */,
+				47BD14B51FB892A200734331 /* View Controllers */,
+				473CE1961FB88F7C0095CAC1 /* Support Files */,
+				473CE17C1FB88DF60095CAC1 /* AppDelegate.h */,
+				473CE17D1FB88DF60095CAC1 /* AppDelegate.m */,
+				473CE1821FB88DF60095CAC1 /* Main.storyboard */,
+				473CE1851FB88DF60095CAC1 /* Assets.xcassets */,
+				473CE1871FB88DF60095CAC1 /* LaunchScreen.storyboard */,
+				473CE18A1FB88DF60095CAC1 /* Info.plist */,
+				473CE18B1FB88DF60095CAC1 /* main.m */,
+			);
+			path = "iOS-NestClientTest";
+			sourceTree = "<group>";
+		};
+		473CE1961FB88F7C0095CAC1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				47BD14DC1FB9A57300734331 /* VJGenericBlockTypes.h */,
+				473CE1971FB88F9B0095CAC1 /* Constants.h */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		47BD14B51FB892A200734331 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				47BD14B61FB892B500734331 /* VJWebAuthViewController.h */,
+				47BD14B71FB892B500734331 /* VJWebAuthViewController.m */,
+				47BD14B91FB892C100734331 /* VJLandingViewController.h */,
+				47BD14BA1FB892C100734331 /* VJLandingViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		47BD14BC1FB8968000734331 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				47BD14BD1FB896B700734331 /* VJAuthManager.h */,
+				47BD14BE1FB896B700734331 /* VJAuthManager.m */,
+				47BD14C01FB8BD4D00734331 /* VJAPIManager.h */,
+				47BD14C11FB8BD4D00734331 /* VJAPIManager.m */,
+				47BD14E61FB9BC2E00734331 /* VJAPIManager+Auth.h */,
+				47BD14E71FB9BC2E00734331 /* VJAPIManager+Auth.m */,
+				47BD14E91FB9BCA000734331 /* VJApiManager_Private.h */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		47BD14C31FB8BD5D00734331 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				47BD14DD1FB9A65200734331 /* Models.h */,
+				47BD14D61FB8BDDE00734331 /* VJNestThermostatModel.h */,
+				47BD14D71FB8BDDE00734331 /* VJNestThermostatModel.m */,
+				47BD14D91FB8BDEC00734331 /* VJNestStructureModel.h */,
+				47BD14DA1FB8BDEC00734331 /* VJNestStructureModel.m */,
+				47BD14DE1FB9A67400734331 /* VJNestCameraModel.h */,
+				47BD14DF1FB9A67400734331 /* VJNestCameraModel.m */,
+				47BD14E21FB9A77700734331 /* VJModelObject.h */,
+				47BD14E31FB9ABE900734331 /* VJAuthToken.h */,
+				47BD14E41FB9ABE900734331 /* VJAuthToken.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8A410233B6A76C84F5E47800 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				602C769907C98F760B1C8398 /* Pods_iOS_NestClientTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5B9743584B02D9B07D983DA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CFFBD8F86009F8679D9F0888 /* Pods-iOS-NestClientTest.debug.xcconfig */,
+				B3E45F68BAA7238737D08259 /* Pods-iOS-NestClientTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		473CE1781FB88DF60095CAC1 /* iOS-NestClientTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 473CE18F1FB88DF60095CAC1 /* Build configuration list for PBXNativeTarget "iOS-NestClientTest" */;
+			buildPhases = (
+				BBD31672906076674F273913 /* [CP] Check Pods Manifest.lock */,
+				473CE1751FB88DF60095CAC1 /* Sources */,
+				473CE1761FB88DF60095CAC1 /* Frameworks */,
+				473CE1771FB88DF60095CAC1 /* Resources */,
+				23F8F2F07D36F331928149A1 /* [CP] Embed Pods Frameworks */,
+				23614CDCF317E352B17BACE7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iOS-NestClientTest";
+			productName = "iOS-NestClientTest";
+			productReference = 473CE1791FB88DF60095CAC1 /* iOS-NestClientTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		473CE1711FB88DF60095CAC1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = VJ;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Vadym Yankovskiy";
+				TargetAttributes = {
+					473CE1781FB88DF60095CAC1 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 473CE1741FB88DF60095CAC1 /* Build configuration list for PBXProject "iOS-NestClientTest" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 473CE1701FB88DF60095CAC1;
+			productRefGroup = 473CE17A1FB88DF60095CAC1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				473CE1781FB88DF60095CAC1 /* iOS-NestClientTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		473CE1771FB88DF60095CAC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				473CE1891FB88DF60095CAC1 /* LaunchScreen.storyboard in Resources */,
+				473CE1861FB88DF60095CAC1 /* Assets.xcassets in Resources */,
+				473CE1841FB88DF60095CAC1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23614CDCF317E352B17BACE7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS-NestClientTest/Pods-iOS-NestClientTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		23F8F2F07D36F331928149A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iOS-NestClientTest/Pods-iOS-NestClientTest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS-NestClientTest/Pods-iOS-NestClientTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BBD31672906076674F273913 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOS-NestClientTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		473CE1751FB88DF60095CAC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47BD14E01FB9A67400734331 /* VJNestCameraModel.m in Sources */,
+				47BD14E51FB9ABE900734331 /* VJAuthToken.m in Sources */,
+				47BD14D81FB8BDDE00734331 /* VJNestThermostatModel.m in Sources */,
+				47BD14BF1FB896B700734331 /* VJAuthManager.m in Sources */,
+				47BD14BB1FB892C100734331 /* VJLandingViewController.m in Sources */,
+				473CE18C1FB88DF60095CAC1 /* main.m in Sources */,
+				47BD14E81FB9BC2E00734331 /* VJAPIManager+Auth.m in Sources */,
+				47BD14DB1FB8BDEC00734331 /* VJNestStructureModel.m in Sources */,
+				473CE17E1FB88DF60095CAC1 /* AppDelegate.m in Sources */,
+				47BD14C21FB8BD4D00734331 /* VJAPIManager.m in Sources */,
+				47BD14B81FB892B500734331 /* VJWebAuthViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		473CE1821FB88DF60095CAC1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				473CE1831FB88DF60095CAC1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		473CE1871FB88DF60095CAC1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				473CE1881FB88DF60095CAC1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		473CE18D1FB88DF60095CAC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		473CE18E1FB88DF60095CAC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		473CE1901FB88DF60095CAC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFFBD8F86009F8679D9F0888 /* Pods-iOS-NestClientTest.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "iOS-NestClientTest/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "VJ.iOS-NestClientTest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		473CE1911FB88DF60095CAC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3E45F68BAA7238737D08259 /* Pods-iOS-NestClientTest.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "iOS-NestClientTest/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "VJ.iOS-NestClientTest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		473CE1741FB88DF60095CAC1 /* Build configuration list for PBXProject "iOS-NestClientTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				473CE18D1FB88DF60095CAC1 /* Debug */,
+				473CE18E1FB88DF60095CAC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		473CE18F1FB88DF60095CAC1 /* Build configuration list for PBXNativeTarget "iOS-NestClientTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				473CE1901FB88DF60095CAC1 /* Debug */,
+				473CE1911FB88DF60095CAC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 473CE1711FB88DF60095CAC1 /* Project object */;
+}

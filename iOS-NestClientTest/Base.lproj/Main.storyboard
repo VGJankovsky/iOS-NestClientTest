@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d4n-fH-2Rs">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Landing View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="VJLandingViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Z2-g7-2Qc">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To start working we need you to connect with your Nest account." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDA-lr-C0C">
+                                        <rect key="frame" x="30" y="100" width="315" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDq-DQ-uXk">
+                                        <rect key="frame" x="0.0" y="241" width="375" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Connect"/>
+                                        <connections>
+                                            <segue destination="DfE-6a-WP8" kind="presentation" identifier="Authentication" id="gv8-1q-x5k"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="tDq-DQ-uXk" firstAttribute="top" secondItem="NDA-lr-C0C" secondAttribute="bottom" constant="100" id="1RI-zs-aZm"/>
+                                    <constraint firstItem="NDA-lr-C0C" firstAttribute="centerX" secondItem="0Z2-g7-2Qc" secondAttribute="centerX" id="FNt-63-nFb"/>
+                                    <constraint firstItem="tDq-DQ-uXk" firstAttribute="leading" secondItem="0Z2-g7-2Qc" secondAttribute="leading" id="NKV-I5-Pav"/>
+                                    <constraint firstItem="NDA-lr-C0C" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0Z2-g7-2Qc" secondAttribute="leading" constant="15" id="Qiu-Vn-pIb"/>
+                                    <constraint firstItem="NDA-lr-C0C" firstAttribute="top" secondItem="0Z2-g7-2Qc" secondAttribute="top" constant="100" id="dKX-2Y-FRs"/>
+                                    <constraint firstItem="tDq-DQ-uXk" firstAttribute="centerX" secondItem="0Z2-g7-2Qc" secondAttribute="centerX" id="zl2-aK-hqv"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Z2-g7-2Qc" secondAttribute="trailing" id="9wV-rl-F3f"/>
+                            <constraint firstItem="0Z2-g7-2Qc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fgT-uR-dUo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0Z2-g7-2Qc" secondAttribute="bottom" id="qyq-VJ-Evn"/>
+                            <constraint firstItem="0Z2-g7-2Qc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ucQ-RX-inh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zhL-MK-ckL"/>
+                    <connections>
+                        <outlet property="_authenticateBtn" destination="tDq-DQ-uXk" id="6k0-fI-ZM4"/>
+                        <outlet property="_needAuthView" destination="0Z2-g7-2Qc" id="dUt-LD-9My"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="466" y="90"/>
+        </scene>
+        <!--Web Auth View Controller-->
+        <scene sceneID="9HU-CU-2ez">
+            <objects>
+                <viewController id="DfE-6a-WP8" customClass="VJWebAuthViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p2f-gW-9sf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uQ3-by-R85">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uQ3-by-R85" firstAttribute="top" secondItem="WJy-Jy-f5D" secondAttribute="top" id="HVW-3U-8hK"/>
+                            <constraint firstItem="uQ3-by-R85" firstAttribute="leading" secondItem="WJy-Jy-f5D" secondAttribute="leading" id="Klo-YY-fae"/>
+                            <constraint firstItem="WJy-Jy-f5D" firstAttribute="trailing" secondItem="uQ3-by-R85" secondAttribute="trailing" id="hJK-tf-bDB"/>
+                            <constraint firstItem="WJy-Jy-f5D" firstAttribute="bottom" secondItem="uQ3-by-R85" secondAttribute="bottom" id="x2q-2J-VYM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WJy-Jy-f5D"/>
+                    </view>
+                    <connections>
+                        <outlet property="_webView" destination="uQ3-by-R85" id="s97-2l-FxF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H5O-Vd-rjj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1265" y="-84"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tPj-mk-kHi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d4n-fH-2Rs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KJO-LL-6x7">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="x2g-Tq-L0F"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qCe-OE-GD7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-303" y="90"/>
+        </scene>
+    </scenes>
+</document>

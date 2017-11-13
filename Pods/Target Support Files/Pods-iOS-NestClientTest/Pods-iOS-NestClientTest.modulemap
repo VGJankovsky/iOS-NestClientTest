@@ -1,0 +1,6 @@
+framework module Pods_iOS_NestClientTest {
+  umbrella header "Pods-iOS-NestClientTest-umbrella.h"
+
+  export *
+  module * { export * }
+}
