@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'iOS-NestClientTest' do
     pod 'AFNetworking'
+    pod 'SVProgressHUD'
 end

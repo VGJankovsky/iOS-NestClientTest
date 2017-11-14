@@ -83,7 +83,9 @@
 
 - (void)performActionForIndexPath:(NSIndexPath *)indexPath
 {
-    
+    if (self.actionBlock) {
+        self.actionBlock([self modelForIndexPath:indexPath]);
+    }
 }
 
 - (id)modelForIndexPath:(NSIndexPath *)indexPath
@@ -101,11 +103,6 @@
     return [self.thermostats count];
 }
 
-- (CGFloat)heightForHeaderInSection:(NSInteger)section
-{
-    return 30.f;
-}
-
 - (CGFloat)heightForIndexPath:(NSIndexPath *)indexPath
 {
     return 44.f;
@@ -113,10 +110,6 @@
 - (NSString *)cellIdentifierForIndexPath:(NSIndexPath *)indexPath
 {
     return [VJThermostatTableViewCell className];
-}
-- (NSString *)titleForHeaderInSection:(NSInteger)section
-{
-    return @"Thermostats";
 }
 
 @end

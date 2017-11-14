@@ -8,6 +8,10 @@
 
 #import "VJTableViewDatasourceManager.h"
 
+@class VJNestThermostatModel;
+
 @interface VJSingleStructureDatasourceManager : VJTableViewDatasourceManager
+
+@property (nonatomic, copy) void (^actionBlock)(VJNestThermostatModel* thermostat);
 
 @end

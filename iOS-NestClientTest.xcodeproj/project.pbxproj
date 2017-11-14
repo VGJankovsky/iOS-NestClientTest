@@ -33,6 +33,9 @@
 		47BD15191FBA598E00734331 /* VJStructureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD15181FBA598E00734331 /* VJStructureViewController.m */; };
 		47BD151D1FBA66C000734331 /* VJThermostatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD151B1FBA66C000734331 /* VJThermostatTableViewCell.m */; };
 		47BD151E1FBA66C000734331 /* VJThermostatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47BD151C1FBA66C000734331 /* VJThermostatTableViewCell.xib */; };
+		47BD15211FBA810D00734331 /* VJThermostatControlsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD15201FBA810D00734331 /* VJThermostatControlsViewController.m */; };
+		47BD15251FBA821700734331 /* VJRoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD15241FBA821700734331 /* VJRoundedView.m */; };
+		47BD15281FBA871F00734331 /* VJValueTransformingSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD15271FBA871F00734331 /* VJValueTransformingSlider.m */; };
 		4DADF345955A3E60A06ADAA0 /* Pods_iOS_NestClientTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602C769907C98F760B1C8398 /* Pods_iOS_NestClientTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +94,12 @@
 		47BD151A1FBA66C000734331 /* VJThermostatTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJThermostatTableViewCell.h; sourceTree = "<group>"; };
 		47BD151B1FBA66C000734331 /* VJThermostatTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VJThermostatTableViewCell.m; sourceTree = "<group>"; };
 		47BD151C1FBA66C000734331 /* VJThermostatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VJThermostatTableViewCell.xib; sourceTree = "<group>"; };
+		47BD151F1FBA810D00734331 /* VJThermostatControlsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJThermostatControlsViewController.h; sourceTree = "<group>"; };
+		47BD15201FBA810D00734331 /* VJThermostatControlsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VJThermostatControlsViewController.m; sourceTree = "<group>"; };
+		47BD15231FBA821700734331 /* VJRoundedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJRoundedView.h; sourceTree = "<group>"; };
+		47BD15241FBA821700734331 /* VJRoundedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VJRoundedView.m; sourceTree = "<group>"; };
+		47BD15261FBA871F00734331 /* VJValueTransformingSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJValueTransformingSlider.h; sourceTree = "<group>"; };
+		47BD15271FBA871F00734331 /* VJValueTransformingSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VJValueTransformingSlider.m; sourceTree = "<group>"; };
 		602C769907C98F760B1C8398 /* Pods_iOS_NestClientTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_NestClientTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E45F68BAA7238737D08259 /* Pods-iOS-NestClientTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-NestClientTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-NestClientTest/Pods-iOS-NestClientTest.release.xcconfig"; sourceTree = "<group>"; };
 		CFFBD8F86009F8679D9F0888 /* Pods-iOS-NestClientTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-NestClientTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-NestClientTest/Pods-iOS-NestClientTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +138,7 @@
 		473CE17B1FB88DF60095CAC1 /* iOS-NestClientTest */ = {
 			isa = PBXGroup;
 			children = (
+				47BD15221FBA820300734331 /* Views */,
 				47BD15041FBA4CDA00734331 /* Categories */,
 				47BD14FD1FBA428F00734331 /* Protocols */,
 				47BD14F91FBA425800734331 /* Cells */,
@@ -166,6 +176,8 @@
 				47BD14BA1FB892C100734331 /* VJLandingViewController.m */,
 				47BD15171FBA598E00734331 /* VJStructureViewController.h */,
 				47BD15181FBA598E00734331 /* VJStructureViewController.m */,
+				47BD151F1FBA810D00734331 /* VJThermostatControlsViewController.h */,
+				47BD15201FBA810D00734331 /* VJThermostatControlsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -248,6 +260,17 @@
 				47BD15091FBA4DEA00734331 /* HelpfulCategories.m */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		47BD15221FBA820300734331 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				47BD15231FBA821700734331 /* VJRoundedView.h */,
+				47BD15241FBA821700734331 /* VJRoundedView.m */,
+				47BD15261FBA871F00734331 /* VJValueTransformingSlider.h */,
+				47BD15271FBA871F00734331 /* VJValueTransformingSlider.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8A410233B6A76C84F5E47800 /* Frameworks */ = {
@@ -363,10 +386,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-iOS-NestClientTest/Pods-iOS-NestClientTest-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -405,6 +430,8 @@
 				47BD14BF1FB896B700734331 /* VJAuthManager.m in Sources */,
 				47BD150A1FBA4DEA00734331 /* HelpfulCategories.m in Sources */,
 				47BD14FC1FBA427100734331 /* VJBaseTableViewCell.m in Sources */,
+				47BD15211FBA810D00734331 /* VJThermostatControlsViewController.m in Sources */,
+				47BD15281FBA871F00734331 /* VJValueTransformingSlider.m in Sources */,
 				47BD14BB1FB892C100734331 /* VJLandingViewController.m in Sources */,
 				473CE18C1FB88DF60095CAC1 /* main.m in Sources */,
 				47BD15021FBA441B00734331 /* VJStructureTableViewCell.m in Sources */,
@@ -418,6 +445,7 @@
 				47BD14C21FB8BD4D00734331 /* VJAPIManager.m in Sources */,
 				47BD15131FBA54FD00734331 /* VJWhereModel.m in Sources */,
 				47BD14B81FB892B500734331 /* VJWebAuthViewController.m in Sources */,
+				47BD15251FBA821700734331 /* VJRoundedView.m in Sources */,
 				47BD14EF1FBA1D9B00734331 /* VJModelObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

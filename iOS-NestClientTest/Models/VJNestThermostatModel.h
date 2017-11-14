@@ -20,6 +20,7 @@
 @property (nonatomic, strong)   NSNumber* humidity;
 @property (nonatomic, assign)   BOOL canHeat;
 @property (nonatomic, assign)   BOOL canCool;
+@property (nonatomic, assign)   BOOL fanTimerActive;
 @property (nonatomic, strong) NSNumber* lockedTempMinF;
 @property (nonatomic, strong) NSNumber* lockedTempMaxF;
 @property (nonatomic, strong) NSNumber* ecoTempLowF;

@@ -12,6 +12,7 @@
 #import "VJAPIManager.h"
 #import "VJStructureTableViewCell.h"
 #import "HelpfulCategories.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface VJStructuresDatasourceManager()
 
@@ -24,7 +25,9 @@
 - (void)loadData
 {
     __weak __typeof (self) wSelf = self;
+    [SVProgressHUD showWithStatus:@"Loading your structures"];
     [self.apiManager getStructuresWithComepletion:^(NSArray<VJNestStructureModel *> *structures, NSError *error) {
+        [SVProgressHUD dismiss];
         __strong __typeof(self) sSelf = wSelf;
         sSelf.structures = structures;
         [sSelf reloadData];

@@ -11,7 +11,7 @@
 
 @interface VJStructureTableViewCell()
 {
-    __weak IBOutlet UILabel*         _nameLabel;
+    __weak IBOutlet UILabel* _nameLabel;
 }
 
 @property (nonatomic, readonly) VJNestStructureModel* castedModel;

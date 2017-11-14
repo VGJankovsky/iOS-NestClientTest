@@ -100,7 +100,7 @@
 
 @end
 
-static char const *PVEnableScrollingProperty = "PVEnableScrollingProperty";
+//static char const *PVEnableScrollingProperty = "PVEnableScrollingProperty";
 static char const *PVPageItemsControllersProperty = "PVPageItemsControllersProperty";
 static NSString *const PVDefaultViewControllerIdentifier = @"PVDefaultViewControllerIdentifier";
 

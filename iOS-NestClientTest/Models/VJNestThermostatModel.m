@@ -38,6 +38,8 @@ static NSString *const VJThermostatWhereNameKey = @"where_name";
 static NSString *const VJThermostatHVACStateKey = @"hvac_state";
 static NSString *const VJThermostatIsLockedKey = @"is_locked";
 
+static NSString *const VJFanTimerActiveKey  = @"fan_timer_active";
+
 @implementation VJNestThermostatModel
 
 - (void)fillWithDicitonary:(NSDictionary *)dictionary
@@ -61,31 +63,15 @@ static NSString *const VJThermostatIsLockedKey = @"is_locked";
     self.whereName = [dictionary valueForKey:VJThermostatWhereNameKey];
     self.hvacState = [dictionary valueForKey:VJThermostatHVACStateKey];
     self.isLocked = [[dictionary valueForKey:VJThermostatIsLockedKey] boolValue];
+    self.fanTimerActive = [[dictionary valueForKey:VJFanTimerActiveKey] boolValue];
 }
 
 - (NSDictionary *)modelDictionary
 {
     NSMutableDictionary* dictionary = [NSMutableDictionary new];
     
-    [dictionary setValue:self.deviceID forKey:VJThermostatDeviceIDKey];
-    [dictionary setValue:self.name forKey:VJThermostatNameKey];
-    [dictionary setValue:self.nameLong forKey:VJThermostatNameLongKey];
-    [dictionary setValue:self.humidity forKey:VJThermostatHumidityKey];
-    [dictionary setValue:@(self.canCool) forKey:VJThermostatCanCoolKey];
-    [dictionary setValue:@(self.canHeat) forKey:VJThermostatCanHeatKey];
-    [dictionary setValue:self.lockedTempMaxF forKey:VJThermostatLockedTempMaxFKey];
-    [dictionary setValue:self.lockedTempMinF forKey:VJThermostatLockedTempMinFKey];
-    [dictionary setValue:self.ecoTempHighF forKey:VJThermostatEcoTempHighFKey];
-    [dictionary setValue:self.ecoTempLowF forKey:VJThermostatEcoTempLowFKey];
-    [dictionary setValue:self.awayTempLowF forKey:VJThermostatAwayTempLowFKey];
-    [dictionary setValue:self.awayTempHighF forKey:VJThermostatAwayTempHighFKey];
-    [dictionary setValue:self.ambientTempF forKey:VJThermostatAmbientTempFKey];
     [dictionary setValue:self.targetTempF forKey:VJThermostatTargetTempFKey];
-    [dictionary setValue:self.structureID forKey:VJThermostatStructureIDKey];
-    [dictionary setValue:self.whereID forKey:VJThermostatWhereIDKey];
-    [dictionary setValue:self.whereName forKey:VJThermostatWhereNameKey];
-    [dictionary setValue:self.hvacState forKey:VJThermostatHVACStateKey];
-    [dictionary setValue:@(self.isLocked) forKey:VJThermostatIsLockedKey];
+    [dictionary setValue:@(self.fanTimerActive) forKey:VJFanTimerActiveKey];
     
     return [NSDictionary dictionaryWithDictionary:dictionary];
 }
