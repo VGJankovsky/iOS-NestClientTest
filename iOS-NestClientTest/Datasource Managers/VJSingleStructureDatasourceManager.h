@@ -1,0 +1,13 @@
+//
+//  VJSingleStructureDatasourceManager.h
+//  iOS-NestClientTest
+//
+//  Created by Vadym Yankovskiy on 11/14/17.
+//  Copyright © 2017 Vadym Yankovskiy. All rights reserved.
+//
+
+#import "VJTableViewDatasourceManager.h"
+
+@interface VJSingleStructureDatasourceManager : VJTableViewDatasourceManager
+
+@end

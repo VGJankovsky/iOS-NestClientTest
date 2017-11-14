@@ -21,6 +21,18 @@
 		47BD14E01FB9A67400734331 /* VJNestCameraModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD14DF1FB9A67400734331 /* VJNestCameraModel.m */; };
 		47BD14E51FB9ABE900734331 /* VJAuthToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD14E41FB9ABE900734331 /* VJAuthToken.m */; };
 		47BD14E81FB9BC2E00734331 /* VJAPIManager+Auth.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD14E71FB9BC2E00734331 /* VJAPIManager+Auth.m */; };
+		47BD14EF1FBA1D9B00734331 /* VJModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD14EE1FBA1D9B00734331 /* VJModelObject.m */; };
+		47BD14F81FBA420300734331 /* VJTableViewDatasourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD14F71FBA420300734331 /* VJTableViewDatasourceManager.m */; };
+		47BD14FC1FBA427100734331 /* VJBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD14FB1FBA427100734331 /* VJBaseTableViewCell.m */; };
+		47BD15021FBA441B00734331 /* VJStructureTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD15011FBA441B00734331 /* VJStructureTableViewCell.m */; };
+		47BD150A1FBA4DEA00734331 /* HelpfulCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD15091FBA4DEA00734331 /* HelpfulCategories.m */; };
+		47BD150D1FBA4EA700734331 /* VJStructuresDatasourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD150C1FBA4EA700734331 /* VJStructuresDatasourceManager.m */; };
+		47BD150F1FBA50A100734331 /* VJStructureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47BD150E1FBA50A100734331 /* VJStructureTableViewCell.xib */; };
+		47BD15131FBA54FD00734331 /* VJWhereModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD15121FBA54FD00734331 /* VJWhereModel.m */; };
+		47BD15161FBA588E00734331 /* VJSingleStructureDatasourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD15151FBA588E00734331 /* VJSingleStructureDatasourceManager.m */; };
+		47BD15191FBA598E00734331 /* VJStructureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD15181FBA598E00734331 /* VJStructureViewController.m */; };
+		47BD151D1FBA66C000734331 /* VJThermostatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BD151B1FBA66C000734331 /* VJThermostatTableViewCell.m */; };
+		47BD151E1FBA66C000734331 /* VJThermostatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47BD151C1FBA66C000734331 /* VJThermostatTableViewCell.xib */; };
 		4DADF345955A3E60A06ADAA0 /* Pods_iOS_NestClientTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602C769907C98F760B1C8398 /* Pods_iOS_NestClientTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,12 +62,35 @@
 		47BD14DD1FB9A65200734331 /* Models.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
 		47BD14DE1FB9A67400734331 /* VJNestCameraModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJNestCameraModel.h; sourceTree = "<group>"; };
 		47BD14DF1FB9A67400734331 /* VJNestCameraModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VJNestCameraModel.m; sourceTree = "<group>"; };
-		47BD14E21FB9A77700734331 /* VJModelObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJModelObject.h; sourceTree = "<group>"; };
 		47BD14E31FB9ABE900734331 /* VJAuthToken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJAuthToken.h; sourceTree = "<group>"; };
 		47BD14E41FB9ABE900734331 /* VJAuthToken.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VJAuthToken.m; sourceTree = "<group>"; };
 		47BD14E61FB9BC2E00734331 /* VJAPIManager+Auth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VJAPIManager+Auth.h"; sourceTree = "<group>"; };
 		47BD14E71FB9BC2E00734331 /* VJAPIManager+Auth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "VJAPIManager+Auth.m"; sourceTree = "<group>"; };
 		47BD14E91FB9BCA000734331 /* VJApiManager_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJApiManager_Private.h; sourceTree = "<group>"; };
+		47BD14ED1FBA1D9B00734331 /* VJModelObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJModelObject.h; sourceTree = "<group>"; };
+		47BD14EE1FBA1D9B00734331 /* VJModelObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VJModelObject.m; sourceTree = "<group>"; };
+		47BD14F61FBA420300734331 /* VJTableViewDatasourceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJTableViewDatasourceManager.h; sourceTree = "<group>"; };
+		47BD14F71FBA420300734331 /* VJTableViewDatasourceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VJTableViewDatasourceManager.m; sourceTree = "<group>"; };
+		47BD14FA1FBA427100734331 /* VJBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJBaseTableViewCell.h; sourceTree = "<group>"; };
+		47BD14FB1FBA427100734331 /* VJBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VJBaseTableViewCell.m; sourceTree = "<group>"; };
+		47BD14FF1FBA42F800734331 /* VJModelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJModelProtocol.h; sourceTree = "<group>"; };
+		47BD15001FBA441B00734331 /* VJStructureTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJStructureTableViewCell.h; sourceTree = "<group>"; };
+		47BD15011FBA441B00734331 /* VJStructureTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VJStructureTableViewCell.m; sourceTree = "<group>"; };
+		47BD15031FBA498D00734331 /* VJTableViewDatasourceManager+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VJTableViewDatasourceManager+Private.h"; sourceTree = "<group>"; };
+		47BD15081FBA4DEA00734331 /* HelpfulCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpfulCategories.h; sourceTree = "<group>"; };
+		47BD15091FBA4DEA00734331 /* HelpfulCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpfulCategories.m; sourceTree = "<group>"; };
+		47BD150B1FBA4EA700734331 /* VJStructuresDatasourceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJStructuresDatasourceManager.h; sourceTree = "<group>"; };
+		47BD150C1FBA4EA700734331 /* VJStructuresDatasourceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VJStructuresDatasourceManager.m; sourceTree = "<group>"; };
+		47BD150E1FBA50A100734331 /* VJStructureTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VJStructureTableViewCell.xib; sourceTree = "<group>"; };
+		47BD15111FBA54FD00734331 /* VJWhereModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJWhereModel.h; sourceTree = "<group>"; };
+		47BD15121FBA54FD00734331 /* VJWhereModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VJWhereModel.m; sourceTree = "<group>"; };
+		47BD15141FBA588E00734331 /* VJSingleStructureDatasourceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJSingleStructureDatasourceManager.h; sourceTree = "<group>"; };
+		47BD15151FBA588E00734331 /* VJSingleStructureDatasourceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VJSingleStructureDatasourceManager.m; sourceTree = "<group>"; };
+		47BD15171FBA598E00734331 /* VJStructureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJStructureViewController.h; sourceTree = "<group>"; };
+		47BD15181FBA598E00734331 /* VJStructureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VJStructureViewController.m; sourceTree = "<group>"; };
+		47BD151A1FBA66C000734331 /* VJThermostatTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VJThermostatTableViewCell.h; sourceTree = "<group>"; };
+		47BD151B1FBA66C000734331 /* VJThermostatTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VJThermostatTableViewCell.m; sourceTree = "<group>"; };
+		47BD151C1FBA66C000734331 /* VJThermostatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VJThermostatTableViewCell.xib; sourceTree = "<group>"; };
 		602C769907C98F760B1C8398 /* Pods_iOS_NestClientTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_NestClientTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E45F68BAA7238737D08259 /* Pods-iOS-NestClientTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-NestClientTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-NestClientTest/Pods-iOS-NestClientTest.release.xcconfig"; sourceTree = "<group>"; };
 		CFFBD8F86009F8679D9F0888 /* Pods-iOS-NestClientTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-NestClientTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-NestClientTest/Pods-iOS-NestClientTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -94,6 +129,10 @@
 		473CE17B1FB88DF60095CAC1 /* iOS-NestClientTest */ = {
 			isa = PBXGroup;
 			children = (
+				47BD15041FBA4CDA00734331 /* Categories */,
+				47BD14FD1FBA428F00734331 /* Protocols */,
+				47BD14F91FBA425800734331 /* Cells */,
+				47BD14F51FBA41D300734331 /* Datasource Managers */,
 				47BD14C31FB8BD5D00734331 /* Models */,
 				47BD14BC1FB8968000734331 /* Managers */,
 				47BD14B51FB892A200734331 /* View Controllers */,
@@ -125,6 +164,8 @@
 				47BD14B71FB892B500734331 /* VJWebAuthViewController.m */,
 				47BD14B91FB892C100734331 /* VJLandingViewController.h */,
 				47BD14BA1FB892C100734331 /* VJLandingViewController.m */,
+				47BD15171FBA598E00734331 /* VJStructureViewController.h */,
+				47BD15181FBA598E00734331 /* VJStructureViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -153,11 +194,60 @@
 				47BD14DA1FB8BDEC00734331 /* VJNestStructureModel.m */,
 				47BD14DE1FB9A67400734331 /* VJNestCameraModel.h */,
 				47BD14DF1FB9A67400734331 /* VJNestCameraModel.m */,
-				47BD14E21FB9A77700734331 /* VJModelObject.h */,
 				47BD14E31FB9ABE900734331 /* VJAuthToken.h */,
 				47BD14E41FB9ABE900734331 /* VJAuthToken.m */,
+				47BD14ED1FBA1D9B00734331 /* VJModelObject.h */,
+				47BD14EE1FBA1D9B00734331 /* VJModelObject.m */,
+				47BD15111FBA54FD00734331 /* VJWhereModel.h */,
+				47BD15121FBA54FD00734331 /* VJWhereModel.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		47BD14F51FBA41D300734331 /* Datasource Managers */ = {
+			isa = PBXGroup;
+			children = (
+				47BD14F61FBA420300734331 /* VJTableViewDatasourceManager.h */,
+				47BD14F71FBA420300734331 /* VJTableViewDatasourceManager.m */,
+				47BD15031FBA498D00734331 /* VJTableViewDatasourceManager+Private.h */,
+				47BD150B1FBA4EA700734331 /* VJStructuresDatasourceManager.h */,
+				47BD150C1FBA4EA700734331 /* VJStructuresDatasourceManager.m */,
+				47BD15141FBA588E00734331 /* VJSingleStructureDatasourceManager.h */,
+				47BD15151FBA588E00734331 /* VJSingleStructureDatasourceManager.m */,
+			);
+			path = "Datasource Managers";
+			sourceTree = "<group>";
+		};
+		47BD14F91FBA425800734331 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				47BD14FA1FBA427100734331 /* VJBaseTableViewCell.h */,
+				47BD14FB1FBA427100734331 /* VJBaseTableViewCell.m */,
+				47BD15001FBA441B00734331 /* VJStructureTableViewCell.h */,
+				47BD15011FBA441B00734331 /* VJStructureTableViewCell.m */,
+				47BD150E1FBA50A100734331 /* VJStructureTableViewCell.xib */,
+				47BD151A1FBA66C000734331 /* VJThermostatTableViewCell.h */,
+				47BD151B1FBA66C000734331 /* VJThermostatTableViewCell.m */,
+				47BD151C1FBA66C000734331 /* VJThermostatTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		47BD14FD1FBA428F00734331 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				47BD14FF1FBA42F800734331 /* VJModelProtocol.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		47BD15041FBA4CDA00734331 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				47BD15081FBA4DEA00734331 /* HelpfulCategories.h */,
+				47BD15091FBA4DEA00734331 /* HelpfulCategories.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		8A410233B6A76C84F5E47800 /* Frameworks */ = {
@@ -240,6 +330,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				473CE1891FB88DF60095CAC1 /* LaunchScreen.storyboard in Resources */,
+				47BD150F1FBA50A100734331 /* VJStructureTableViewCell.xib in Resources */,
+				47BD151E1FBA66C000734331 /* VJThermostatTableViewCell.xib in Resources */,
 				473CE1861FB88DF60095CAC1 /* Assets.xcassets in Resources */,
 				473CE1841FB88DF60095CAC1 /* Main.storyboard in Resources */,
 			);
@@ -308,15 +400,25 @@
 			files = (
 				47BD14E01FB9A67400734331 /* VJNestCameraModel.m in Sources */,
 				47BD14E51FB9ABE900734331 /* VJAuthToken.m in Sources */,
+				47BD151D1FBA66C000734331 /* VJThermostatTableViewCell.m in Sources */,
 				47BD14D81FB8BDDE00734331 /* VJNestThermostatModel.m in Sources */,
 				47BD14BF1FB896B700734331 /* VJAuthManager.m in Sources */,
+				47BD150A1FBA4DEA00734331 /* HelpfulCategories.m in Sources */,
+				47BD14FC1FBA427100734331 /* VJBaseTableViewCell.m in Sources */,
 				47BD14BB1FB892C100734331 /* VJLandingViewController.m in Sources */,
 				473CE18C1FB88DF60095CAC1 /* main.m in Sources */,
+				47BD15021FBA441B00734331 /* VJStructureTableViewCell.m in Sources */,
+				47BD14F81FBA420300734331 /* VJTableViewDatasourceManager.m in Sources */,
+				47BD15161FBA588E00734331 /* VJSingleStructureDatasourceManager.m in Sources */,
 				47BD14E81FB9BC2E00734331 /* VJAPIManager+Auth.m in Sources */,
 				47BD14DB1FB8BDEC00734331 /* VJNestStructureModel.m in Sources */,
+				47BD150D1FBA4EA700734331 /* VJStructuresDatasourceManager.m in Sources */,
+				47BD15191FBA598E00734331 /* VJStructureViewController.m in Sources */,
 				473CE17E1FB88DF60095CAC1 /* AppDelegate.m in Sources */,
 				47BD14C21FB8BD4D00734331 /* VJAPIManager.m in Sources */,
+				47BD15131FBA54FD00734331 /* VJWhereModel.m in Sources */,
 				47BD14B81FB892B500734331 /* VJWebAuthViewController.m in Sources */,
+				47BD14EF1FBA1D9B00734331 /* VJModelObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 
 #import "VJAuthToken.h"
 
-static NSString *const VJAuthTokenStringKey     = @"token";
+static NSString *const VJAuthTokenStringKey     = @"access_token";
 static NSString *const VJAuthTokenExpiresInKey  = @"expires_in";
 static NSString *const VJAuthTokenExpiresOnKey  = @"expiresOn";
 
@@ -23,26 +23,9 @@ static NSString *const VJAuthTokenExpiresOnKey  = @"expiresOn";
 
 #pragma mark Init and Parse methods
 
-+ (instancetype)objectWithDictionary:(NSDictionary *)dictionary
-{
-    return [[self.class alloc] initWithDictionary:dictionary];
-}
-
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary
-{
-    self = [super init];
-    
-    if (self) {
-        [self fillWithDicitonary:dictionary];
-    }
-    
-    return self;
-}
-
 - (void)fillWithDicitonary:(NSDictionary *)dictionary
 {
     self.token      = [dictionary valueForKey:VJAuthTokenStringKey];
-#warning Check for more proper double value extration
     
     NSTimeInterval expiresInInterval =  [[dictionary valueForKey:VJAuthTokenExpiresInKey] longValue];
     self.expiresOn = [[NSDate date] dateByAddingTimeInterval:expiresInInterval];

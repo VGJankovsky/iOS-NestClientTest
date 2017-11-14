@@ -8,13 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol VJModelObject <NSObject>
+@interface VJModelObject : NSObject
 
+//Derived properties
+@property (nonatomic, readonly) NSDictionary* modelDictionary;
+
+//Common initialization methods
 + (instancetype)objectWithDictionary:(NSDictionary *)dictionary;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 - (void)fillWithDicitonary:(NSDictionary *)dictionary;
 
-@optional
-@property (nonatomic, readonly) NSDictionary* modelDictionary;
+
 
 @end

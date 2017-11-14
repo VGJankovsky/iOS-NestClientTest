@@ -9,6 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "VJModelObject.h"
 
-@interface VJNestStructureModel : NSObject<VJModelObject>
+@class VJWhereModel;
+
+@interface VJNestStructureModel : VJModelObject
+
+@property (nonatomic, copy) NSString* structureID;
+@property (nonatomic, copy) NSString* name;
+@property (nonatomic, copy) NSString* countryCode;
+@property (nonatomic, copy) NSString* timeZone;
+@property (nonatomic, copy) NSString* away;
+@property (nonatomic, strong) NSArray<NSString *>* cameraIDs;
+@property (nonatomic, strong) NSArray<NSString *>* thermostatIDs;
+@property (nonatomic, strong) NSArray<VJWhereModel *>* wheres;
 
 @end

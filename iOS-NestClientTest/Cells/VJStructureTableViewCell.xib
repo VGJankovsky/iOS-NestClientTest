@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="VJStructureTableViewCell" id="NbK-tJ-dOw" customClass="VJStructureTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NbK-tJ-dOw" id="2lg-rX-5Rg">
+                <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCy-n4-yyy">
+                        <rect key="frame" x="15" y="8.5" width="55" height="26.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                        <color key="textColor" red="0.23921568630000001" green="0.1960784314" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="oCy-n4-yyy" firstAttribute="centerY" secondItem="2lg-rX-5Rg" secondAttribute="centerY" id="Ykf-0L-2bJ"/>
+                    <constraint firstItem="oCy-n4-yyy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2lg-rX-5Rg" secondAttribute="top" id="hy0-6x-Dxh"/>
+                    <constraint firstItem="oCy-n4-yyy" firstAttribute="leading" secondItem="2lg-rX-5Rg" secondAttribute="leading" constant="15" id="xJt-Av-bbN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="_nameLabel" destination="oCy-n4-yyy" id="zrx-JR-y3u"/>
+            </connections>
+            <point key="canvasLocation" x="-153" y="-61"/>
+        </tableViewCell>
+    </objects>
+</document>

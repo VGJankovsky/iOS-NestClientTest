@@ -8,7 +8,10 @@
 
 #import "VJAPIManager_Private.h"
 
-
+static NSTimeInterval const VJRequestTimeoutInterval = 30.0;
+static NSString *const VJStructuresAPIPath  = @"structures";
+static NSString *const VJCameraAPIPath     = @"devices/cameras/%@/";
+static NSString *const VJThermostatAPIPath = @"devices/thermostats/%@/";
 
 @implementation VJAPIManager
 
@@ -47,23 +50,37 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 #pragma mark - Private
 
 #pragma mark - Private: Setters
 
-- (void)setAuthorizationToken:(NSString *)authorizationToken
+- (void)didReceiveAuthorizationTokenUpdatedNotification:(NSNotification *)notification
 {
-//    _authorizationToken = [authorizationToken copy];
-//
-//    [_httpSessionManager.requestSerializer setValue:[NSString stringWithFormat:@"Token token=%@",_authorizationToken] forHTTPHeaderField:@"Authorization"];
+    [self setAccessTokenIfNeeded];
+}
+
+- (void)setAccessTokenIfNeeded
+{
+    _authorizationToken = self.authManager.tokenString;
+    [_httpSessionManager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@",_authorizationToken] forHTTPHeaderField:@"Authorization"];
 }
 
 #pragma mark - Private: Setup
 
 - (void)setup
 {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didReceiveAuthorizationTokenUpdatedNotification:)
+                                                 name:VJReceivedAccessTokenNotification
+                                               object:nil];
+    
     _sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
-//    _sessionConfiguration.timeoutIntervalForRequest = STRequestTimeoutInterval;
+    _sessionConfiguration.timeoutIntervalForRequest = VJRequestTimeoutInterval;
     
     NSString* baseAPIURLString = [NSString stringWithFormat:@"%@://%@", VJCommProtocol, VJNestAPIPath];
     
@@ -71,24 +88,79 @@
     
     _httpSessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:_baseAPIURL sessionConfiguration:_sessionConfiguration];
     _httpSessionManager.requestSerializer = [AFJSONRequestSerializer new];
+    _httpSessionManager.requestSerializer.HTTPMethodsEncodingParametersInURI = [NSSet set];
     _httpSessionManager.securityPolicy.allowInvalidCertificates = YES;
+    _httpSessionManager.securityPolicy.validatesDomainName = NO;
     
-//    self.authorizationToken = [STConfigurationStorage authToken];
+    __weak __typeof(self) wSelf = self;
     
-    self.processingQueue = dispatch_queue_create("apimanager.response.processing.queue", DISPATCH_QUEUE_SERIAL);
+    [_httpSessionManager setTaskWillPerformHTTPRedirectionBlock:^NSURLRequest * _Nonnull(NSURLSession * _Nonnull session, NSURLSessionTask * _Nonnull task, NSURLResponse * _Nonnull response, NSURLRequest * _Nonnull request) {
+        NSLog(@"Handling redirect to %@", request.URL);
+        
+        __strong __typeof(self) sSelf = wSelf;
+        NSMutableURLRequest* mutableRequest = [request mutableCopy];
+        if (sSelf) {
+            [mutableRequest setValue:[NSString stringWithFormat:@"Bearer %@",sSelf->_authorizationToken] forHTTPHeaderField:@"Authorization"];
+        }
+        
+        return mutableRequest; // return request to follow the redirect, or return nil to stop the redirect
+    }];
     
+    [self setAccessTokenIfNeeded];
+    [self startMonitoringReachability];
     NSLog(@"API manager started with server url: %@", _httpSessionManager.baseURL.absoluteString);
 }
 
-#pragma mark - Private: API
-
-
-
 #pragma mark - Public
 
-- (void)getAuthorizationTokenWithCode:(NSString *)code completion:(void (^)(VJAuthToken *, NSError *))completion
+- (void)getStructuresWithComepletion:(void (^)(NSArray<VJNestStructureModel*>* structures, NSError* error))completion
 {
+    [self getWithPath:VJStructuresAPIPath params:nil completionHandler:^(id response, NSError *error, BOOL isRequestCanceled, BOOL isGoingOffline) {
+        if (error) {
+            completion(nil, error);
+            return;
+        }
+        
+        NSDictionary* responseDict = (NSDictionary *)response;
+        
+        __block NSMutableArray<VJNestStructureModel*>* structuresMutable = [NSMutableArray new];
+        
+        [responseDict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+            [structuresMutable addObject:[VJNestStructureModel objectWithDictionary:obj]];
+        }];
+        
+        completion(structuresMutable, nil);
+    }];
+}
+
+- (void)getThermostatWithID:(NSString *)thermostatID completion:(void (^)(VJNestThermostatModel *, NSError *))completion
+{
+    NSString* thermostatPath = [NSString stringWithFormat:VJThermostatAPIPath, thermostatID];
+    [self getWithPath:thermostatPath params:nil completionHandler:^(id response, NSError *error, BOOL isRequestCanceled, BOOL isGoingOffline) {
+        if (error) {
+            completion(nil, error);
+            return;
+        }
+        
+        completion([VJNestThermostatModel objectWithDictionary:response], nil);
+    }];
+}
+
+- (void)setThermostatDataWithThermostat:(VJNestThermostatModel *)thermostat completion:(VJGenericErrorBlock)completion
+{
+    NSString* thermostatPath = [NSString stringWithFormat:VJThermostatAPIPath, thermostat.deviceID];
+    [self putWithPath:thermostatPath params:thermostat.modelDictionary completionHandler:^(id response, NSError *error, BOOL isRequestCanceled, BOOL isGoingOffline) {
+        completion(error);
+    }];
+}
+
+- (void)getCameraWithID:(NSString *)cameraID completion:(void (^)(VJNestCameraModel *, NSError *))completion
+{
+    NSString* cameraPath = [NSString stringWithFormat:VJCameraAPIPath, cameraID];
     
+    [self getWithPath:cameraPath params:nil completionHandler:^(id response, NSError *error, BOOL isRequestCanceled, BOOL isGoingOffline) {
+        
+    }];
 }
 
 - (BOOL)isThereInternetConnection
@@ -137,6 +209,14 @@
 
 - (void)postWithPath:(NSString *)path params:(NSDictionary *)params completionHandler:(APIRequestGenericHandler)completion
 {
+    [self postWithPath:path sessionManager:_httpSessionManager params:params completionHandler:completion];
+}
+
+- (void)postWithPath:(NSString *)path
+      sessionManager:(AFHTTPSessionManager *)sessionManager
+              params:(NSDictionary *)params
+   completionHandler:(APIRequestGenericHandler)completion
+{
     if ([self handleConnectionAbsenceWithRequestCompletion:completion]) {
         return;
     }
@@ -145,7 +225,7 @@
     
     __weak typeof(self) wSelf = self;
     
-    [_httpSessionManager POST:[path stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]
+    [sessionManager POST:[path stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]
                    parameters:params
                      progress:nil
                       success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -249,6 +329,15 @@
         if (completion)
             completion(nil, error, error.code == NSURLErrorCancelled, NO);
     });
+}
+
+@end
+
+@implementation NSObject(APIManager)
+
+- (VJAPIManager *)apiManager
+{
+    return [VJAPIManager sharedInstance];
 }
 
 @end

@@ -40,7 +40,7 @@ static NSString *const VJAuthorizationTokenDefaultsKey = @"authTokenKey";
     self = [super init];
     if (self)
     {
-        self.authToken = [[NSUserDefaults standardUserDefaults] objectForKey:VJAuthorizationTokenDefaultsKey];
+        self.authToken = [self loadCustomObjectWithKey:VJAuthorizationTokenDefaultsKey];
     }
     
     return self;
@@ -74,16 +74,40 @@ static NSString *const VJAuthorizationTokenDefaultsKey = @"authTokenKey";
         
         __strong __typeof(self) sSelf = wSelf;
         
-        NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
-        [userDefaults setObject:token forKey:VJAuthorizationTokenDefaultsKey];
+        [sSelf saveCustomObject:token key:VJAuthorizationTokenDefaultsKey];
         
         sSelf.authToken = token;
+        
+        if (errorBlock) {
+            errorBlock(nil);
+        }
     }];
 }
 
 - (NSString *)tokenString
 {
     return self.authToken.token;
+}
+
+#pragma mark Save/Load Token from User Defaults
+
+- (void)saveCustomObject:(id)object key:(NSString *)key
+{
+    
+    NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:object];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:encodedObject forKey:key];
+    [defaults synchronize];
+    
+}
+
+- (id)loadCustomObjectWithKey:(NSString *)key {
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *encodedObject = [defaults objectForKey:key];
+    id object = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
+    
+    return object;
 }
 
 @end

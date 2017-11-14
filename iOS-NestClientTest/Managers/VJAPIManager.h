@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "Models.h"
+#import "VJGenericBlockTypes.h"
 
-@class VJAuthToken;
+@class VJAuthToken, VJNestThermostatModel;
 
 @interface VJAPIManager : NSObject
 
 - (void)getThermostatWithID:(NSString *)thermostatID completion:(void (^)(VJNestThermostatModel* thermostat, NSError* error))completion;
+- (void)setThermostatDataWithThermostat:(VJNestThermostatModel *)thermostat completion:(VJGenericErrorBlock)completion;
 - (void)getCameraWithID:(NSString *)cameraID completion:(void (^)(VJNestCameraModel* camera, NSError* error))completion;
-- (void)getStructureWithID:(NSString *)structureID comepletion:(void (^)(VJNestStructureModel* structure, NSError* error))completion;
+- (void)getStructuresWithComepletion:(void (^)(NSArray<VJNestStructureModel*>* structures, NSError* error))completion;
 
 
 @end

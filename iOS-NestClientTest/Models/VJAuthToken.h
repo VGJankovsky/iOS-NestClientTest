@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "VJModelObject.h"
 
-@interface VJAuthToken : NSObject<VJModelObject>
+@interface VJAuthToken : VJModelObject
 
 @property (nonatomic, readonly) NSString*   token;
 @property (nonatomic, readonly) NSDate*     expiresOn;

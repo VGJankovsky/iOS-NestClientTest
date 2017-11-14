@@ -9,85 +9,61 @@
 #import "VJApiManager_Private.h"
 #import "VJAPIManager+Auth.h"
 
-static NSString *const VJDeauthFormattedURLString = @"https://api.%@/oauth2/access_tokens/%@";
+static NSString *const VJNestOathPath = @"oauth2/access_token";
+static NSString *const VJAuthCodeKey  = @"code";
+static NSString *const VJClientIDKey  = @"client_id";
+static NSString *const VJClientSecretKey = @"client_secret";
+static NSString *const VJGrantTypeKey    = @"grant_type";
+static NSString *const VJGrantTypeValue  = @"authorization_code";
 
 @implementation VJAPIManager (Auth)
 
-/**
- * Get the URL to deauthorize the connection.
- * @return The URL to deauthorize the connection.
- */
-- (NSString *)deauthorizationURL
+- (void)setupAuthSessionManagerIfNeeded
 {
-    return [NSString stringWithFormat:VJDeauthFormattedURLString, VJNestCurrentAPIDomain, self.authManager.tokenString];
-}
-
-/**
- * Get the URL for to get the access key.
- * @return The URL to get the access token from Nest.
- */
-- (NSString *)accessURLWithAuthCode:(NSString *)authCode
-{
-
-    
-    if (clientId && clientSecret && authorizationCode) {
-        return [NSString stringWithFormat:@"https://api.%@/oauth2/access_token?code=%@&client_id=%@&client_secret=%@&grant_type=authorization_code", NestCurrentAPIDomain, authorizationCode, clientId, clientSecret];
-    } else {
-        if (!clientSecret) {
-            NSLog(@"Missing Client Secret");
-        }
-        if (!clientId) {
-            NSLog(@"Missing Client ID");
-        }
-        if (!authorizationCode) {
-            NSLog(@"Missing authorization code");
-        }
-        return nil;
+    if (!_authSessionManager) {
+        NSURLSessionConfiguration* sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        //    _sessionConfiguration.timeoutIntervalForRequest = STRequestTimeoutInterval;
+        
+        NSString* baseAPIURLString = [NSString stringWithFormat:@"https://api.%@/", VJNestCurrentAPIDomain];
+        
+        NSURL* baseAPIURL = [NSURL URLWithString:baseAPIURLString];
+        
+        _authSessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseAPIURL sessionConfiguration:sessionConfiguration];
+        _authSessionManager.requestSerializer = [AFHTTPRequestSerializer new];
+        _authSessionManager.securityPolicy.allowInvalidCertificates = YES;
+        _authSessionManager.securityPolicy.validatesDomainName = NO;
+        [_authSessionManager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+        
+        
+        NSLog(@"Auth session manager started with server url: %@", _authSessionManager.baseURL.absoluteString);
     }
 }
 
-- (void)exchangeCodeForToken
+
+- (void)getAuthorizationTokenWithCode:(NSString *)code completion:(void (^)(VJAuthToken * token, NSError * error))completion
 {
-    // Create the response data
-    self.responseData = [[NSMutableData alloc] init];
+    [self setupAuthSessionManagerIfNeeded];
     
-    // Get the accessURL
-    NSString *accessURL = [self accessURL];
+    NSMutableDictionary* params = [NSMutableDictionary new];
     
-    // For the POST request
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:accessURL]];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:@"form-data" forHTTPHeaderField:@"Content-Type"];
+    [params setValue:code forKey:VJAuthCodeKey];
+    [params setValue:VJNestProductID forKey:VJClientIDKey];
+    [params setValue:VJNestProductSecret forKey:VJClientSecretKey];
+    [params setValue:VJGrantTypeValue forKey:VJGrantTypeKey];
     
-    // Assign the session to the main queue so the call happens immediately
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]
-                                                          delegate:nil
-                                                     delegateQueue:[NSOperationQueue mainQueue]];
     
-    [[session dataTaskWithRequest:request completionHandler:
-      ^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-          
-          NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-          NSLog(@"AuthManager Token Response Status Code: %ld", (long)[httpResponse statusCode]);
-          
-          [self.responseData appendData:data];
-          
-          // The request is complete and data has been received
-          // You can parse the stuff in your instance variable now
-          NSDictionary* json = [NSJSONSerialization JSONObjectWithData:self.responseData
-                                                               options:kNilOptions
-                                                                 error:&error];
-          
-          // Store the access key
-          long expiresIn = [[json objectForKey:@"expires_in"] longValue];
-          NSString *accessToken = [json objectForKey:@"access_token"];
-          [self setAccessToken:accessToken withExpiration:expiresIn];
-          
-          [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-          
-      }] resume];
-    
+    [self postWithPath:VJNestOathPath sessionManager:_authSessionManager params:params completionHandler:^(id response, NSError *error, BOOL isRequestCanceled, BOOL isGoingOffline) {
+        if (error) {
+            if (completion) {
+                completion(nil, error);
+            }
+            
+            return;
+        }
+        if (completion) {
+            completion([VJAuthToken objectWithDictionary:response], nil);
+        }
+    }];
 }
 
 #pragma mark - NestControlsViewControllerDelegate Methods
@@ -98,32 +74,32 @@ static NSString *const VJDeauthFormattedURLString = @"https://api.%@/oauth2/acce
  */
 - (void)deauthorizeConnection
 {
-    
-    NSLog(@"deauthorizeConnection");
-    
-    // Get the deauthorizationURL
-    NSString *deauthURL = [self deauthorizationURL];
-    
-    // Create the DELETE request
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:deauthURL]];
-    [request setHTTPMethod:@"DELETE"];
-    
-    // Assign the session to the main queue so the call happens immediately
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]
-                                                          delegate:nil
-                                                     delegateQueue:[NSOperationQueue mainQueue]];
-    
-    [[session dataTaskWithRequest:request completionHandler:
-      ^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-          
-          NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-          NSLog(@"AuthManager Delete Response Status Code: %ld", (long)[httpResponse statusCode]);
-          
-      }] resume];
-    
-    // Delete the access token and authorization code from storage
-    [self removeAuthorizationData];
+//    
+//    NSLog(@"deauthorizeConnection");
+//    
+//    // Get the deauthorizationURL
+//    NSString *deauthURL = [self deauthorizationURL];
+//    
+//    // Create the DELETE request
+//    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+//    [request setURL:[NSURL URLWithString:deauthURL]];
+//    [request setHTTPMethod:@"DELETE"];
+//    
+//    // Assign the session to the main queue so the call happens immediately
+//    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]
+//                                                          delegate:nil
+//                                                     delegateQueue:[NSOperationQueue mainQueue]];
+//    
+//    [[session dataTaskWithRequest:request completionHandler:
+//      ^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//          
+//          NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+//          NSLog(@"AuthManager Delete Response Status Code: %ld", (long)[httpResponse statusCode]);
+//          
+//      }] resume];
+//    
+//    // Delete the access token and authorization code from storage
+//    [self removeAuthorizationData];
     
 }
 

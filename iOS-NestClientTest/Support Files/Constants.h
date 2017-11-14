@@ -22,4 +22,6 @@ static NSString *const VJNestAuthFormattedString = @"https://home.nest.com/login
 
 static NSString *const VJReachabilityReferenceDomain = @"www.google.com";
 
+static NSString *const VJReceivedAccessTokenNotification = @"VJReceivedAccessTokenNotification";
+
 #endif /* Constants_h */

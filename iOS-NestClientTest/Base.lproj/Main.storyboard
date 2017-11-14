@@ -18,6 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jt1-9R-sF3">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Z2-g7-2Qc">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
@@ -50,8 +54,12 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Z2-g7-2Qc" secondAttribute="trailing" id="9wV-rl-F3f"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jt1-9R-sF3" secondAttribute="bottom" id="If2-cU-bI1"/>
+                            <constraint firstItem="jt1-9R-sF3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dBC-4g-BV7"/>
                             <constraint firstItem="0Z2-g7-2Qc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fgT-uR-dUo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jt1-9R-sF3" secondAttribute="trailing" id="ojV-IS-UfY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0Z2-g7-2Qc" secondAttribute="bottom" id="qyq-VJ-Evn"/>
+                            <constraint firstItem="jt1-9R-sF3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tVi-bj-eYE"/>
                             <constraint firstItem="0Z2-g7-2Qc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ucQ-RX-inh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -60,11 +68,53 @@
                     <connections>
                         <outlet property="_authenticateBtn" destination="tDq-DQ-uXk" id="6k0-fI-ZM4"/>
                         <outlet property="_needAuthView" destination="0Z2-g7-2Qc" id="dUt-LD-9My"/>
+                        <outlet property="datasourceManager" destination="hDj-0l-iZd" id="uUX-w7-GiU"/>
+                        <segue destination="2hA-A9-c0h" kind="show" identifier="ShowStructure" id="Qp5-SK-U6a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="hDj-0l-iZd" customClass="VJStructuresDatasourceManager">
+                    <connections>
+                        <outlet property="tableView" destination="jt1-9R-sF3" id="r4N-YG-daV"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="466" y="90"/>
+        </scene>
+        <!--Structure View Controller-->
+        <scene sceneID="Aht-sS-LU8">
+            <objects>
+                <viewController id="2hA-A9-c0h" customClass="VJStructureViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ELJ-Gk-UGA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gtT-CY-yqY">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gtT-CY-yqY" firstAttribute="leading" secondItem="qok-p4-1RN" secondAttribute="leading" id="8HX-I8-dqg"/>
+                            <constraint firstItem="gtT-CY-yqY" firstAttribute="top" secondItem="qok-p4-1RN" secondAttribute="top" id="AAr-Ex-HNF"/>
+                            <constraint firstItem="qok-p4-1RN" firstAttribute="trailing" secondItem="gtT-CY-yqY" secondAttribute="trailing" id="VoB-Lc-OVc"/>
+                            <constraint firstItem="qok-p4-1RN" firstAttribute="bottom" secondItem="gtT-CY-yqY" secondAttribute="bottom" id="n3q-Yj-341"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qok-p4-1RN"/>
+                    </view>
+                    <connections>
+                        <outlet property="datasourceManager" destination="zlM-0J-EaB" id="slD-bZ-iju"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6yF-Cm-hzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="zlM-0J-EaB" customClass="VJSingleStructureDatasourceManager">
+                    <connections>
+                        <outlet property="tableView" destination="gtT-CY-yqY" id="OgX-JK-y7m"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1362" y="90"/>
         </scene>
         <!--Web Auth View Controller-->
         <scene sceneID="9HU-CU-2ez">
@@ -94,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5O-Vd-rjj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1265" y="-84"/>
+            <point key="canvasLocation" x="1401" y="-424"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tPj-mk-kHi">

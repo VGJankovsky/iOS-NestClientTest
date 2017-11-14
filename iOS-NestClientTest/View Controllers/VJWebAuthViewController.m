@@ -71,7 +71,12 @@ static NSString *const VJAuthCodeKey = @"code";
         if(code.length)
         {
             [self.authManager authorizationCodeRetrieved:code errorBlock:^(NSError *error) {
-                NSLog(@"Error retrieving the authorization code.");
+                if (error) {
+                    NSLog(@"Error retrieving the authorization code.");
+                    return;
+                }
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:VJReceivedAccessTokenNotification object:nil];
             }];
             
         } else {

@@ -26,16 +26,21 @@ typedef void (^APIRequestGenericHandler)(id response, NSError* error, BOOL isReq
     NSURLSessionConfiguration*      _sessionConfiguration;
     AFNetworkReachabilityManager*   _reachabilityManager;
     AFHTTPSessionManager*           _httpSessionManager;
+    AFHTTPSessionManager*           _authSessionManager;
     NSURL*                          _baseAPIURL;
 }
 
 @property (nonatomic, copy) NSString* authorizationToken;
-@property (nonatomic, strong) dispatch_queue_t processingQueue;
 
 
 - (void)putWithPath:(NSString *)path
              params:(NSDictionary *)params
   completionHandler:(APIRequestGenericHandler)completion;
+
+- (void)postWithPath:(NSString *)path
+      sessionManager:(AFHTTPSessionManager *)sessionManager
+              params:(NSDictionary *)params
+   completionHandler:(APIRequestGenericHandler)completion;
 
 - (void)postWithPath:(NSString *)path
               params:(NSDictionary *)params
