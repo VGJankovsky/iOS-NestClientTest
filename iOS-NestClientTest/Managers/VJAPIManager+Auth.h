@@ -12,6 +12,5 @@
 @interface VJAPIManager (Auth)
 
 - (void)getAuthorizationTokenWithCode:(NSString *)code completion:(void (^)(VJAuthToken* token, NSError* error))completion;
-- (void)deauthorizeWithCompletion:(VJGenericErrorBlock)errorBlock;
 
 @end

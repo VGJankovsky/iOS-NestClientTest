@@ -38,8 +38,11 @@ static NSString *const VJShowStructureViewControllerSegue = @"ShowStructure";
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
     self.title = @"Your Nest";
+    
     _needAuthView.hidden = self.authManager.isLoggedIn;
+    
     if (self.authManager.isLoggedIn) {
         [self.datasourceManager loadData];
     }
